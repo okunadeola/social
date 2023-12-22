@@ -7,6 +7,10 @@ import employee_data from "./employee_data";
 
 import MoreDropdown from "./MoreDropdown";
 import './table.css'
+import ArrowDown from "./ArrowDown";
+import MoreRoleDropdown from "./MoreRoleDropdown";
+
+import { Pagination } from 'flowbite-react';
 
 const DataTable1 = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -18,12 +22,7 @@ const DataTable1 = () => {
 
 
   const EmployeeCustomPagination = () => (
-
-
-  
-          
-          
-            <div className="flex justify-between my-10">
+            <div className="flex justify-between my-10 mb-20 mx-10">
 
               <span>Showing 1 to 7 of 7 entries</span>
               <ReactPaginate
@@ -43,21 +42,48 @@ const DataTable1 = () => {
                 pageLinkClassName="page-link text-red-500"
                 breakLinkClassName="page-link text-red-500"
                 previousLinkClassName="page-link text-red-500"
-                nextClassName="page-item next-item bg-green-500"
-                previousClassName="page-item prev-item"
+
+                nextClassName="page-item next-item px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+
+                previousClassName="page-item prev-item relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
                 containerClassName={
                   "pagination mb-0 justify-content-end p-1"
                 }
               />
 
             </div>
-
-          
-          
-
-
-
   );
+
+  
+
+function PaginateComponent() {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const onPageChange = (page) => setCurrentPage(page);
+
+  return (
+    <div className="flex sm:flex-row flex-wrap justify-between my-10 mb-20 mx-10 items-center">
+      <div>
+        <span>Showing 1 to 7 of 7 entries</span>
+
+      </div>
+        <div className="flex overflow-x-auto sm:justify-center min-w-max">
+          <Pagination currentPage={currentPage} totalPages={100} onPageChange={onPageChange} />
+        </div>
+      </div>
+  );
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
   const handlePagination = async (page) => {
@@ -68,22 +94,28 @@ const DataTable1 = () => {
 };
 
 
-
-
-  // image: "assets/images/profiles/avatar-02.jpg",
-  // name: "John Doe",
-  // role: "Web Designer",
-  // employeeId: "FT-0001",
-  // email: "bernardogalaviz@example.com",
-  // mobile: "9876543210",
-  // joinedDate: "1 Jan 2013",
   // availableRoles: [ "Software Engineer", "Software Tester", "Frontend Developer", "UI/UX Developer"]
-const invoiceColumns = [
+const columns = [
   {
     name: "Name",
     sortable: true,
-    maxWidth: "60px",
-    selector: (row) => row?.name,
+    minWidth: "150px",
+    cell: (row) => {
+      return (
+        <span className="flex gap-2 items-center" >
+            <span className="h-10 w-10 rounded-full flex items-center ">
+              <img
+                src={row.image}
+                alt="User"
+                className="rounded-full w-[2rem] h-[2rem]"
+              />
+            </span>
+            <span >
+            {row?.name} 
+            </span>
+        </span>
+      );
+    },
   },
   {
     name: "Employee ID",
@@ -106,31 +138,27 @@ const invoiceColumns = [
   {
     name: "Join Date",
     sortable: true,
-    minWidth: "100px",
+    maxWidth: "50px",
     selector: (row) => row?.joinedDate,
   },
   {
     name: "Role",
     sortable: true,
-    minWidth: "100px",
-    selector: (row) => row?.invoiceStatus,
+    minWidth: "200px",
     cell: (row) => {
       return (
-        <span  >
-            {row?.availableRoles.lenght}
-        </span>
+        <MoreRoleDropdown row={row}/>
       );
     },
   },
   {
     name: "Actions",
     allowOverflow: true,
+    minWidth: "200px",
     cell: (row, i) => {
       return (
         <div className="d-flex">
-
             <MoreDropdown bottom={i === employeeData.length -1}/>
-         
         </div>
       );
     },
@@ -152,11 +180,11 @@ const invoiceColumns = [
               pagination
               paginationServer
               data={employee_data}
-              columns={invoiceColumns}
+              columns={columns}
               expandOnRowClicked
               className="react-dataTable z-1 overflow-visible"
               sortIcon={<TbArrowsSort size={10} />}
-              paginationComponent={EmployeeCustomPagination}
+              paginationComponent={PaginateComponent}
               paginationDefaultPage={currentPage + 1}
               paginationRowsPerPageOptions={[20, 40, 60, 100]}
               striped={true}

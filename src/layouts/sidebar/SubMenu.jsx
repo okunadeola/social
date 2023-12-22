@@ -13,7 +13,7 @@ const SubMenu = ({ data }) => {
   const [subMenuOpen, setSubMenuOpen] = useState(false);
   const [showDropDown, setShowDropDown] = useState(false);
 
- console.log(tabClicked)
+
   const trigger = useRef(null);
 
   const showSubMenu = ()=>{
@@ -95,7 +95,7 @@ const SubMenu = ({ data }) => {
             }
             className={`flex h-0 flex-col pl-12 text-[0.8rem] z-10 font-normal overflow-hidden w-[15rem] relative -top-2 rounded-br-md ${(tabClicked === data.name ||pathname.includes(data.name)) && "bg-sidebarSubMenuBg"}` }
           >
-            <div className={`bg-gray-800 hidden left-3 h-full absolute w-[0.9px] mx-3.5 border-1 ${(tabClicked === data.name ||pathname.includes(data.name)) && "d-block"}`}></div>
+            {/* <div className={`bg-gray-800 hidden left-3 h-full absolute w-[0.9px] mx-3.5 border-1 ${(tabClicked === data.name ||pathname.includes(data.name)) && "d-block"}`}></div> */}
 
             {data.menus?.map((menu) => (
               <li key={menu}

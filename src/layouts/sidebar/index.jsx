@@ -117,14 +117,14 @@ const Sidebar = () => {
         variants={Nav_animation}
         initial={{ x: isTablet ? -350 : 0 }}
         animate={sidebarMinimized && sidebarOpen ? 'minimize' : !sidebarMinimized && sidebarOpen ? 'open' : 'closed' }
-        className="shadow-xl md:z-[9] z-[9999] max-w-[16rem]  w-[16rem] 
+        className="shadow-xl lg:z-[999999] z-[99999] max-w-[16rem]  w-[16rem] 
              fixed top-0 left-0
            h-screen  dark:!text-gray-100 bg-sidebarBg"
       >
         <div className={`flex flex-col bg-sidebarBg ${sidebarMinimized ? 'h-16' : 'h-40'}`}>
 
           <div className={`w-100 h-4  flex justify-end my-2   p-3 px-4 font-medium hover:cursor-pointer ${sidebarMinimized && 'justify-center'}`} onClick={foldSidebar}>
-            <PiArrowsLeftRightBold size={25} color="#555" />
+            <PiArrowsLeftRightBold size={25} color="#ccc" />
           </div>
           <div className={`w-100 h-40  flex-col justify-center items-center ${sidebarMinimized ? 'hidden' : 'flex'}`}>
             <svg
@@ -147,43 +147,46 @@ const Sidebar = () => {
           <ul className="whitespace-pre text-[0.9rem]  py-5 flex flex-col gap-1 overflow-x-hidden  font-medium  scrollbar-thin scrollbar-thumb-transparent  group-hover:scrollbar-thumb-scrollbarColor   scrollbar-track-transparent   menuScrollBar md:h-[78%] h-[75%]  px-0">
 
             {
-              routes.map(route =>(
-                  <Fragment key={route.title} className='group'>
-                      {
-                      !sidebarMinimized && 
-                        <small className="mx-4 py-3 text-menuItemTitle font-bold  text-sm inline-block mb-2 tracking-widest font-Lato">
-                          {route.title?.toLocaleUpperCase()}
-                        </small>
-                      }
+              routes.map((route, i) =>(
+                  <Fragment key={i}>
+                    <div className="group">
+                        {
+                        !sidebarMinimized && 
+                          <small className="mx-4 py-3 text-menuItemTitle font-bold  text-sm inline-block mb-2 tracking-widest font-Lato">
+                            {route.title?.toLocaleUpperCase()}
+                          </small>
+                        }
 
-                      {
-                        route.withSubMenu ? (
-                            <>
+                        {
+                          route.withSubMenu ? (
+                              <>
 
-                          <div className="">
-                          {route?.submenu?.map((menu) => (
-                            <div key={menu.name} className="flex flex-col gap-1">
-                              <SubMenu data={menu} />
+                            <div className="">
+                            {route?.submenu?.map((menu, i) => (
+                              <div key={i} className="flex flex-col gap-1">
+                                <SubMenu data={menu} />
+                              </div>
+                            ))}
                             </div>
-                          ))}
-                          </div>
-                            </>
+                              </>
 
-                        ) : (
+                          ) : (
 
-                            <>
-                          <li className={`${sidebarMinimized && 'border-b border-gray-800 py-5 hover:text-white ' }`}>
-                          <NavLink to={"/"} className={` ${sidebarMinimized ? 'flex flex-col text-center justify-center gap-1 cursor-pointer  duration-300 font-medium text-gray-400': 'link'}`}>
-                            <MdOutlineAnalytics size={sidebarMinimized ? 30 :23} className={`min-w-max ${sidebarMinimized && "mx-auto"}`} />
-                            
-                            Dashboard
-                            
-                          </NavLink>
-                        </li>
-                            </>
+                              <>
+                            <li className={`${sidebarMinimized && 'border-b border-gray-800 py-5 hover:text-white ' }`}>
+                            <NavLink to={"/"} className={` ${sidebarMinimized ? 'flex flex-col text-center justify-center gap-1 cursor-pointer  duration-300 font-medium text-gray-400': 'link'}`}>
+                              <MdOutlineAnalytics size={sidebarMinimized ? 30 :23} className={`min-w-max ${sidebarMinimized && "mx-auto"}`} />
+                              
+                              Dashboard
+                              
+                            </NavLink>
+                          </li>
+                              </>
 
-                        )
-                      }
+                          )
+                        }
+
+                    </div>
                   </Fragment>
               ))
             }

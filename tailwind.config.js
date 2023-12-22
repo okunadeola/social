@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 import scrollbar from "tailwind-scrollbar"
-import  defaultTheme from "tailwindcss/defaultTheme"
+
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   darkMode: 'class',
@@ -20,6 +20,7 @@ export default {
         menuItemTitle:'#949799',
         menuDropdownBg:'#272C33',
         scrollbarColor:'#7D8084',
+        btnColor:'#00BCC2',
       },
       screens: {
         // 'md': '850px',

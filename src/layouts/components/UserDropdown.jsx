@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 import UserOne from "../../assets/images/avatar2.jpg";
+import ArrowDown from "../../components/ArrowDown";
 
 const UserDropdown = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -57,18 +58,7 @@ const UserDropdown = () => {
 
       
 
-        <svg
-          className={`hidden fill-current sm:block ml-2`}
-          fill="#ccc"
-          width="12"
-          height="10"
-          version="1.1"
-          id="Layer_1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 386.257 386.257"
-        >
-          <polygon points="0,96.879 193.129,289.379 386.257,96.879 " />
-        </svg>
+        <ArrowDown/>
       </Link>
 
       {/* <!-- Dropdown Start --> */}
