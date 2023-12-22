@@ -100,7 +100,7 @@ const Sidebar = () => {
       
       <div
         onClick={() => overlayClicked()}
-        className={`md:hidden fixed inset-0 max-h-screen z-[998] bg-gray-900  opacity-30 ${
+        className={`lg:hidden fixed inset-0 max-h-screen z-[998] bg-gray-900  opacity-30 ${
           sidebarOpen ? "block" : "hidden"
         } `}
       ></div>

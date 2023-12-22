@@ -44,7 +44,7 @@ const dropdown = useRef(null);
             ref={dropdown}
             onFocus={() => setShowDropDown(true)}
             onBlur={() => setShowDropDown(false)}
-            className={`fixed top-2/4 ml-8 z-[9999999]  flex w-60 flex-col rounded-3xl border dark:border-transparent bg-white dark:text-gray-100 dark:bg-slate-900 shadow-default  ${
+            className={`fixed top-2/4 ml-8 z-[555]  flex w-60 flex-col rounded-3xl border dark:border-transparent bg-white dark:text-gray-100 dark:bg-slate-900 shadow-default  ${
               showDropDown === true ? 'block' : 'hidden'
             }`}
           >

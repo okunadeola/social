@@ -23,16 +23,11 @@ const Navbar = () => {
       <div className='px-2 py-1 '>
          <div className='flex items-center justify-between'>
             <div className='flex items-center justify-between gap-2'> 
-                <div className="md:hidden cursor-pointer" onClick={() => toggleSideBar()}>
+                <div className="lg:hidden cursor-pointer" onClick={() => toggleSideBar()}>
                     <MdMenu size={25} />
                 </div>
                 
-                <img
-                className='hidden md:block'
-                    src="https://img.icons8.com/color/512/firebase.png"
-                    width={35}
-                    alt=""
-                />
+               
                 <span className="text-xl whitespace-pre font-medium sm:block hidden">Huma</span>
             </div>
                 
@@ -44,7 +39,7 @@ const Navbar = () => {
                 {/* <ThemeModeSwitcher2/> */}
 
                 <UserDropdown className='font-medium text-gray-600' />
-                
+
                 <div>
                     <DropdownNotification/>
                 </div>

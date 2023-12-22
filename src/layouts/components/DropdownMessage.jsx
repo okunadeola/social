@@ -38,7 +38,7 @@ const DropdownMessage = () => {
   });
 
   return (
-    <div className="relative dark:text-gray-700" >
+    <div className="relative dark:text-gray-700 z-[9999955]" >
       <Link
         ref={trigger}
         onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -57,7 +57,7 @@ const DropdownMessage = () => {
         onFocus={() => setDropdownOpen(true)}
         onBlur={() => setDropdownOpen(false)}
         className={`absolute md:-right-25 right-0 mt-2.5 flex h-96 flex-col 
-        w-[19rem]
+        w-[19rem] z-[555]
         rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:right-0 sm:w-80 px-3 ${
           dropdownOpen === true ? 'block' : 'hidden'
         }`}

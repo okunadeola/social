@@ -96,7 +96,7 @@ const UserDropdown = () => {
           </div>
           <div
             
-            className={`absolute right-0 mt-[1.2rem] flex w-60 flex-col rounded-sm border border-stroke dark:border-transparent bg-white dark:text-gray-100 dark:bg-slate-900 shadow-default dark:border-strokedark dark:bg-boxdark ${
+            className={`absolute right-0 mt-[1.2rem] flex w-60 flex-col rounded-sm border border-stroke dark:border-transparent z-[555] bg-white dark:text-gray-100 dark:bg-slate-900 shadow-default dark:border-strokedark dark:bg-boxdark ${
               dropdownOpen === true ? "block" : "hidden"
             }`}
           >

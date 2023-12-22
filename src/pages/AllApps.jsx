@@ -1,9 +1,10 @@
-import DataTable1 from "../components/DataTable1";
+
+import Employee from "./Employee";
 
 const AllApps = () => {
   return  (
  
-      <DataTable1/>
+      <Employee/>
 
   )
   

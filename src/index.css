@@ -27,6 +27,10 @@
   @apply p-2.5 mr-4 px-4 w-[96.7%] flex rounded-md gap-2 items-center md:cursor-pointer cursor-default duration-300 font-medium text-menuItemColor hover:text-white;
 }
 
+.link2 {
+  @apply p-2.5 mr-4 px-4 w-[93.7%] flex rounded-md gap-2 items-center md:cursor-pointer cursor-default duration-300 font-medium text-menuItemColor hover:text-white;
+}
+
 .active {
   @apply text-white;
 }

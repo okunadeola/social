@@ -59,7 +59,7 @@ const SubMenuSidebar = () => {
         {
           sidebarOpen &&  sidebarMinimized && showminimizedsubMenu && (
 
-        <div className="relative bg-sidebarBg">
+        <div className="relative bg-sidebarBg w-[93%]">
 
             <div className="md:z-[9] z-[999] max-w-[16rem]  w-[16rem] 
                 fixed top-0 left-[7.5rem]

@@ -13,7 +13,8 @@ export const dashboardContext = createContext()
 
 
 const DashboardContext = ({children}) => {
-    let isTablet = useMediaQuery({ query: "(max-width: 768px)" });
+    let isTablet = useMediaQuery({ query: "(max-width: 1024px)" }); 
+    // let isTablet = useMediaQuery({ query: "(max-width: 768px)" });
     const [sidebarOpen, setSidebarOpen] = useState(isTablet ? false : true)
     const [tabClicked, setTabClicked] = useState(null)
     const [sidebarMinimized, setSidebarMinimized] = useState(false)

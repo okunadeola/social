@@ -57,7 +57,7 @@ useEffect(() => {
             
                 <li
                 
-                    className={`relative  hover:text-white hover:cursor-pointer bg-sidebarSubMenuBg link`}
+                    className={`relative  hover:text-white hover:cursor-pointer bg-sidebarSubMenuBg link2`}
                     onClick={showSubMenu} ref={trigger}
                 >
                     <extendedSubMenuData.icon size={23}  className={`min-w-max`} />
