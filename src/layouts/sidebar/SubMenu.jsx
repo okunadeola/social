@@ -48,6 +48,12 @@ const SubMenu = ({ data }) => {
     }
   )
   
+  const variants = {
+    visible: (custom) => ({
+      opacity: 1,
+      transition: { delay: custom * 0.1 }
+    })
+  }
 
 
   
@@ -55,7 +61,7 @@ const SubMenu = ({ data }) => {
     <>
       <li
      
-        className={`relative  hover:text-white hover:cursor-pointer ${!sidebarMinimized && tabClicked === data.name && "bg-sidebarSubMenuBg"} ${sidebarMinimized && 'border-b border-gray-800 py-4' } ${sidebarMinimized ? 'flex flex-col text-center justify-center gap-1 cursor-pointer  duration-300 font-medium text-gray-400': 'link'}`}
+        className={`relative z-40  hover:text-white hover:cursor-pointer ${!sidebarMinimized && tabClicked === data.name && "bg-sidebarSubMenuBg"} ${sidebarMinimized && 'border-b border-gray-800 py-4' } ${sidebarMinimized ? 'flex flex-col text-center justify-center gap-1 cursor-pointer  duration-300 font-medium text-gray-400': 'link'}`}
         onClick={showSubMenu} ref={trigger}
       >
         <data.icon size={sidebarMinimized ? 30 :23}  className={`min-w-max ${sidebarMinimized && "mx-auto"}`} />
@@ -76,6 +82,8 @@ const SubMenu = ({ data }) => {
       {
         sidebarOpen && (
           <motion.ul
+        
+            variants={variants}
             animate={
               !sidebarMinimized && tabClicked === data.name
                 ? {
@@ -85,7 +93,7 @@ const SubMenu = ({ data }) => {
                     height: 0,
                   }
             }
-            className={`flex h-0 flex-col pl-12 text-[0.8rem] font-normal overflow-hidden w-[15rem] relative -top-2 rounded-br-md ${(tabClicked === data.name ||pathname.includes(data.name)) && "bg-sidebarSubMenuBg"}` }
+            className={`flex h-0 flex-col pl-12 text-[0.8rem] z-10 font-normal overflow-hidden w-[15rem] relative -top-2 rounded-br-md ${(tabClicked === data.name ||pathname.includes(data.name)) && "bg-sidebarSubMenuBg"}` }
           >
             <div className={`bg-gray-800 hidden left-3 h-full absolute w-[0.9px] mx-3.5 border-1 ${(tabClicked === data.name ||pathname.includes(data.name)) && "d-block"}`}></div>
 

@@ -1,18 +1,19 @@
-import { useContext, useEffect } from "react";
+import { Fragment, useContext, useEffect } from "react";
 import { useRef } from "react";
 import SubMenu from "./SubMenu";
 import { motion } from "framer-motion";
+import routes from "./routes";
 
 
 
 
 import { MdOutlineAnalytics } from "react-icons/md";
-import { BsClock } from "react-icons/bs";
+
 
 import { NavLink, useLocation } from "react-router-dom";
 import { dashboardContext } from "../../context/Dashboard";
 import { PiArrowsLeftRightBold } from "react-icons/pi";
-import { FaCircleNotch } from "react-icons/fa6";
+
 import SubMenuSidebar from "../submenuSidebar";
 
 const Sidebar = () => {
@@ -92,18 +93,7 @@ const Sidebar = () => {
         },
       };
 
-  const subMenusList = [
-    {
-      name: "Enterprise",
-      icon: FaCircleNotch,
-      menus: ["app settings", "stroage", "hosting"],
-    },
-    {
-      name: "Productivity",
-      icon: BsClock,
-      menus: ["dashboard", "realtime", "events"],
-    },
-  ];
+
 
   return (
     <div className="relative bg-sidebarBg">
@@ -153,38 +143,51 @@ const Sidebar = () => {
           </div>
         </div>
 
-        <div className="flex flex-col  h-full">
-          <ul className="whitespace-pre text-[0.9rem] py-5 flex flex-col gap-1 overflow-x-hidden  font-medium  scrollbar-thin dark:scrollbar-track-slate-400  scrollbar-track-white scrollbar-thumb-slate-100 dark:scrollbar-thumb-slate-700  md:h-[78%] h-[75%]  px-0">
+        <div className="flex flex-col  h-full group">
+          <ul className="whitespace-pre text-[0.9rem]  py-5 flex flex-col gap-1 overflow-x-hidden  font-medium  scrollbar-thin scrollbar-thumb-transparent  group-hover:scrollbar-thumb-scrollbarColor   scrollbar-track-transparent   menuScrollBar md:h-[78%] h-[75%]  px-0">
+
             {
-             !sidebarMinimized && 
-              <small className="mx-4 py-3 text-menuItemTitle font-bold  text-sm inline-block mb-2 tracking-widest font-Lato">
-                OVERVIEW
-              </small>
+              routes.map(route =>(
+                  <Fragment key={route.title} className='group'>
+                      {
+                      !sidebarMinimized && 
+                        <small className="mx-4 py-3 text-menuItemTitle font-bold  text-sm inline-block mb-2 tracking-widest font-Lato">
+                          {route.title?.toLocaleUpperCase()}
+                        </small>
+                      }
+
+                      {
+                        route.withSubMenu ? (
+                            <>
+
+                          <div className="">
+                          {route?.submenu?.map((menu) => (
+                            <div key={menu.name} className="flex flex-col gap-1">
+                              <SubMenu data={menu} />
+                            </div>
+                          ))}
+                          </div>
+                            </>
+
+                        ) : (
+
+                            <>
+                          <li className={`${sidebarMinimized && 'border-b border-gray-800 py-5 hover:text-white ' }`}>
+                          <NavLink to={"/"} className={` ${sidebarMinimized ? 'flex flex-col text-center justify-center gap-1 cursor-pointer  duration-300 font-medium text-gray-400': 'link'}`}>
+                            <MdOutlineAnalytics size={sidebarMinimized ? 30 :23} className={`min-w-max ${sidebarMinimized && "mx-auto"}`} />
+                            
+                            Dashboard
+                            
+                          </NavLink>
+                        </li>
+                            </>
+
+                        )
+                      }
+                  </Fragment>
+              ))
             }
-            <li className={`${sidebarMinimized && 'border-b border-gray-800 py-5 ' }`}>
-              <NavLink to={"/"} className={` ${sidebarMinimized ? 'flex flex-col text-center justify-center gap-1 cursor-pointer  duration-300 font-medium text-gray-400': 'link'}`}>
-                <MdOutlineAnalytics size={sidebarMinimized ? 30 :23} className={`min-w-max ${sidebarMinimized && "mx-auto"}`} />
-                
-                Dashboard
-                
-              </NavLink>
-            </li>
 
-            {/* {(sidebarOpen || isTablet) && ( */}
-            <div className="">
-
-              { !sidebarMinimized && (
-                <small className="mx-4 py-3 text-menuItemTitle  font-bold  text-sm inline-block mb-2 tracking-widest font-Lato">
-                APPLICATIONS
-              </small>
-              )}
-              {subMenusList?.map((menu) => (
-                <div key={menu.name} className="flex flex-col gap-1">
-                  <SubMenu data={menu} />
-                </div>
-              ))}
-            </div>
-            
           </ul>
 
         

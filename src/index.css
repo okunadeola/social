@@ -24,15 +24,20 @@
 }
 
 .link {
-  @apply p-2.5 mr-4 px-4 flex rounded-md gap-2 items-center md:cursor-pointer cursor-default duration-300 font-medium text-menuItemColor;
+  @apply p-2.5 mr-4 px-4 w-[96.7%] flex rounded-md gap-2 items-center md:cursor-pointer cursor-default duration-300 font-medium text-menuItemColor hover:text-white;
 }
 
 .active {
   @apply text-white;
 }
 
+.menuScrollBar::-webkit-scrollbar-thumb {
+  @apply rounded-md h-[35rem]
+}
 
-.myname{
+
+
+/* .myname{
   color:#00BCC2;
   color: #F5F7FA;
  color: #2c3032;
@@ -42,7 +47,7 @@
   color: #8A9199;
   color: #272C33;
   color: #949799;
-}
+} */
 
 
 /* sidebar text(short cut) = 8A9199

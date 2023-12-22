@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+import scrollbar from "tailwind-scrollbar"
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   darkMode: 'class',
@@ -17,6 +18,7 @@ export default {
         menuItemColor:'#8A9199',
         menuItemTitle:'#949799',
         menuDropdownBg:'#272C33',
+        scrollbarColor:'#7D8084',
       },
       dropShadow: {
           1: '0px 1px 0px #E2E8F0',
@@ -27,6 +29,6 @@ export default {
       }
     },
   },
-  plugins: [import ("tailwind-scrollbar")],
+  plugins: [scrollbar],
 }
 
