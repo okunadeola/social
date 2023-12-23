@@ -1,14 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useContext, useEffect } from "react";
-
-// import { motion } from "framer-motion";
-
-
-
 import { dashboardContext } from "../../context/Dashboard";
 
-import { FaCircleNotch } from "react-icons/fa6";
-import { BsClock } from "react-icons/bs";
+
 import SubMenuExtended from "./SubMenuExtended";
 
 
@@ -40,18 +34,7 @@ const SubMenuSidebar = () => {
 
 
 
-  const subMenusList = [
-    {
-      name: "Enterprise",
-      icon: FaCircleNotch,
-      menus: ["app settings", "stroage", "hosting"],
-    },
-    {
-      name: "Productivity",
-      icon: BsClock,
-      menus: ["dashboard", "realtime", "events"],
-    },
-  ];
+
 
   return (
 
@@ -68,7 +51,7 @@ const SubMenuSidebar = () => {
                     <ul className="whitespace-pre text-[0.9rem] py-5 flex flex-col gap-1 overflow-x-hidden  font-medium  scrollbar-thin dark:scrollbar-track-slate-400  scrollbar-track-white scrollbar-thumb-slate-100 dark:scrollbar-thumb-slate-700  md:h-[78%] h-[75%]  px-0">
                       
                     <div  className="flex flex-col gap-1">
-                      <SubMenuExtended data={subMenusList[0]} />
+                      <SubMenuExtended  />
                     </div>
             
                     </ul>

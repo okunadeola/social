@@ -13,7 +13,7 @@ const Employee = () => {
 
   return (
     <div className="mt-5">
-      <div className="flex justify-between flex-wrap">
+      <div className="flex justify-between flex-wrap gap-y-2">
         <div>
           <div className=" text-3xl font-bold">Employee</div>
           <div className="flex text-gray-700 gap-1">

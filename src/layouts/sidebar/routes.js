@@ -6,6 +6,7 @@ export default [
     {
         title: 'overview',
         name: "Dashboard",
+        route: '/',
         icon: MdOutlineAnalytics,
         withSubMenu: false
     },
@@ -17,12 +18,12 @@ export default [
             {
               name: "Enterprise",
               icon: FaCircleNotch,
-              menus: ["app settings", "stroage", "hosting"],
+              menus: [{name:"app settings", route: '/app-settings'}, {name:"storage", route:'/storage'}, {name:"hosting", route: "/hosting"}],
             },
             {
               name: "Productivity",
               icon: BsClock,
-              menus: ["dashboard", "realtime", "events"],
+              menus: [{name:"dashboard", route: '/dashboard'}, {name:"realtime", route:'/realtime'}, {name:"events", route: "/events"}],
             },
           ]
         
@@ -30,6 +31,7 @@ export default [
     {
         title: 'overview',
         name: "Dashboard",
+        route: '/',
         icon: MdOutlineAnalytics,
         withSubMenu: false
     },
@@ -41,12 +43,12 @@ export default [
             {
               name: "Enterprise",
               icon: FaCircleNotch,
-              menus: ["app settings", "stroage", "hosting"],
+              menus: [{name:"app settings", route: '/app-settings'}, {name:"storage", route:'/storage'}, {name:"hosting", route: "/hosting"}],
             },
             {
               name: "Productivity",
               icon: BsClock,
-              menus: ["dashboard", "realtime", "events"],
+              menus: [{name:"dashboard", route: '/dashboard'}, {name:"realtime", route:'/realtime'}, {name:"events", route: "/events"}],
             },
           ]
         
@@ -54,6 +56,7 @@ export default [
     {
         title: 'overview',
         name: "Dashboard",
+        route: '/',
         icon: MdOutlineAnalytics,
         withSubMenu: false
     },
@@ -65,12 +68,12 @@ export default [
             {
               name: "Enterprise",
               icon: FaCircleNotch,
-              menus: ["app settings", "stroage", "hosting"],
+              menus: [{name:"app settings", route: '/app-settings'}, {name:"storage", route:'/storage'}, {name:"hosting", route: "/hosting"}],
             },
             {
               name: "Productivity",
               icon: BsClock,
-              menus: ["dashboard", "realtime", "events"],
+              menus: [{name:"dashboard", route: '/dashboard'}, {name:"realtime", route:'/realtime'}, {name:"events", route: "/events"}],
             },
           ]
         
@@ -78,6 +81,7 @@ export default [
     {
         title: 'overview',
         name: "Dashboard",
+        route: '/',
         icon: MdOutlineAnalytics,
         withSubMenu: false
     },
@@ -89,12 +93,12 @@ export default [
             {
               name: "Enterprise",
               icon: FaCircleNotch,
-              menus: ["app settings", "stroage", "hosting"],
+              menus: [{name:"app settings", route: '/app-settings'}, {name:"storage", route:'/storage'}, {name:"hosting", route: "/hosting"}],
             },
             {
               name: "Productivity",
               icon: BsClock,
-              menus: ["dashboard", "realtime", "events"],
+              menus: [{name:"dashboard", route: '/dashboard'}, {name:"realtime", route:'/realtime'}, {name:"events", route: "/events"}],
             },
           ]
         
@@ -102,6 +106,7 @@ export default [
     {
         title: 'overview',
         name: "Dashboard",
+        route: '/',
         icon: MdOutlineAnalytics,
         withSubMenu: false
     },
@@ -113,12 +118,12 @@ export default [
             {
               name: "Enterprise",
               icon: FaCircleNotch,
-              menus: ["app settings", "stroage", "hosting"],
+              menus: [{name:"app settings", route: '/app-settings'}, {name:"storage", route:'/storage'}, {name:"hosting", route: "/hosting"}],
             },
             {
               name: "Productivity",
               icon: BsClock,
-              menus: ["dashboard", "realtime", "events"],
+              menus: [{name:"dashboard", route: '/dashboard'}, {name:"realtime", route:'/realtime'}, {name:"events", route: "/events"}],
             },
           ]
         
@@ -126,6 +131,7 @@ export default [
     {
         title: 'overview',
         name: "Dashboard",
+        route: '/',
         icon: MdOutlineAnalytics,
         withSubMenu: false
     },
@@ -137,12 +143,12 @@ export default [
             {
               name: "Enterprise",
               icon: FaCircleNotch,
-              menus: ["app settings", "stroage", "hosting"],
+              menus: [{name:"app settings", route: '/app-settings'}, {name:"storage", route:'/storage'}, {name:"hosting", route: "/hosting"}],
             },
             {
               name: "Productivity",
               icon: BsClock,
-              menus: ["dashboard", "realtime", "events"],
+              menus: [{name:"dashboard", route: '/dashboard'}, {name:"realtime", route:'/realtime'}, {name:"events", route: "/events"}],
             },
           ]
         
@@ -150,6 +156,7 @@ export default [
     {
         title: 'overview',
         name: "Dashboard",
+        route: '/',
         icon: MdOutlineAnalytics,
         withSubMenu: false
     },
@@ -161,12 +168,12 @@ export default [
             {
               name: "Enterprise",
               icon: FaCircleNotch,
-              menus: ["app settings", "stroage", "hosting"],
+              menus: [{name:"app settings", route: '/app-settings'}, {name:"storage", route:'/storage'}, {name:"hosting", route: "/hosting"}],
             },
             {
               name: "Productivity",
               icon: BsClock,
-              menus: ["dashboard", "realtime", "events"],
+              menus: [{name:"dashboard", route: '/dashboard'}, {name:"realtime", route:'/realtime'}, {name:"events", route: "/events"}],
             },
           ]
         
@@ -174,6 +181,7 @@ export default [
     {
         title: 'overview',
         name: "Dashboard",
+        route: '/',
         icon: MdOutlineAnalytics,
         withSubMenu: false
     },
@@ -185,12 +193,12 @@ export default [
             {
               name: "Enterprise",
               icon: FaCircleNotch,
-              menus: ["app settings", "stroage", "hosting"],
+              menus: [{name:"app settings", route: '/app-settings'}, {name:"storage", route:'/storage'}, {name:"hosting", route: "/hosting"}],
             },
             {
               name: "Productivity",
               icon: BsClock,
-              menus: ["dashboard", "realtime", "events"],
+              menus: [{name:"dashboard", route: '/dashboard'}, {name:"realtime", route:'/realtime'}, {name:"events", route: "/events"}],
             },
           ]
         
@@ -198,6 +206,7 @@ export default [
     {
         title: 'overview',
         name: "Dashboard",
+        route: '/',
         icon: MdOutlineAnalytics,
         withSubMenu: false
     },
@@ -209,12 +218,12 @@ export default [
             {
               name: "Enterprise",
               icon: FaCircleNotch,
-              menus: ["app settings", "stroage", "hosting"],
+              menus: [{name:"app settings", route: '/app-settings'}, {name:"storage", route:'/storage'}, {name:"hosting", route: "/hosting"}],
             },
             {
               name: "Productivity",
               icon: BsClock,
-              menus: ["dashboard", "realtime", "events"],
+              menus: [{name:"dashboard", route: '/dashboard'}, {name:"realtime", route:'/realtime'}, {name:"events", route: "/events"}],
             },
           ]
         
@@ -222,6 +231,7 @@ export default [
     {
         title: 'overview',
         name: "Dashboard",
+        route: '/',
         icon: MdOutlineAnalytics,
         withSubMenu: false
     },
@@ -233,12 +243,12 @@ export default [
             {
               name: "Enterprise",
               icon: FaCircleNotch,
-              menus: ["app settings", "stroage", "hosting"],
+              menus: [{name:"app settings", route: '/app-settings'}, {name:"storage", route:'/storage'}, {name:"hosting", route: "/hosting"}],
             },
             {
               name: "Productivity",
               icon: BsClock,
-              menus: ["dashboard", "realtime", "events"],
+              menus: [{name:"dashboard", route: '/dashboard'}, {name:"realtime", route:'/realtime'}, {name:"events", route: "/events"}],
             },
           ]
         
@@ -246,6 +256,7 @@ export default [
     {
         title: 'overview',
         name: "Dashboard",
+        route: '/',
         icon: MdOutlineAnalytics,
         withSubMenu: false
     },
@@ -257,14 +268,40 @@ export default [
             {
               name: "Enterprise",
               icon: FaCircleNotch,
-              menus: ["app settings", "stroage", "hosting"],
+              menus: [{name:"app settings", route: '/app-settings'}, {name:"storage", route:'/storage'}, {name:"hosting", route: "/hosting"}],
             },
             {
               name: "Productivity",
               icon: BsClock,
-              menus: ["dashboard", "realtime", "events"],
+              menus: [{name:"dashboard", route: '/dashboard'}, {name:"realtime", route:'/realtime'}, {name:"events", route: "/events"}],
             },
           ]
         
     },
+    {
+        title: 'overview',
+        name: "Dashboard",
+        route: '/',
+        icon: MdOutlineAnalytics,
+        withSubMenu: false
+    },
+    {
+        title: 'applications',
+        name: "applications",
+        withSubMenu: true,
+        submenu: [
+            {
+              name: "Enterprise",
+              icon: FaCircleNotch,
+              menus: [{name:"app settings", route: '/app-settings'}, {name:"storage", route:'/storage'}, {name:"hosting", route: "/hosting"}],
+            },
+            {
+              name: "Productivity",
+              icon: BsClock,
+              menus: [{name:"dashboard", route: '/dashboard'}, {name:"realtime", route:'/realtime'}, {name:"events", route: "/events"}],
+            },
+          ]
+        
+    },
+   
 ];

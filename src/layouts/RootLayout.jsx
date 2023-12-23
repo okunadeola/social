@@ -9,7 +9,7 @@ import Sidebar from "./sidebar";
 function RootLayout({ children }) {
   const { sidebarOpen, sidebarMinimized,  } = useContext(dashboardContext)
 
-console.log(sidebarOpen)
+
   return (
         <div className="dark:text-gray-100 dark:bg-slate-700 bg-lighten duration-200 ease-in-out z-1 overflow-hidden">
               <Navbar/>

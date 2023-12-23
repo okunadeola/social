@@ -10,10 +10,10 @@ import { dashboardContext } from "../../context/Dashboard";
 const SubMenu = ({ data }) => {
   const {sidebarOpen, tabClicked, toggleTab, sidebarMinimized, setShowminimizedsubMenu, setExtendedSubMenuData} = useContext(dashboardContext)
   const { pathname } = useLocation();
-  const [subMenuOpen, setSubMenuOpen] = useState(false);
+  // const [subMenuOpen, setSubMenuOpen] = useState(false);
   const [showDropDown, setShowDropDown] = useState(false);
 
-
+ 
   const trigger = useRef(null);
 
   const showSubMenu = ()=>{
@@ -21,16 +21,13 @@ const SubMenu = ({ data }) => {
       setShowminimizedsubMenu(true)
       setExtendedSubMenuData(data)
     }
-
-
-
     toggleTab(data.name)
-
-    if (sidebarOpen) {
-      setSubMenuOpen(!subMenuOpen)
-    }else{
-      setShowDropDown(true)
-    }
+ 
+    // if (sidebarOpen) {
+    //   setSubMenuOpen(!subMenuOpen)
+    // }else{
+    //   setShowDropDown(true)
+    // }
   }
 
 
@@ -95,18 +92,24 @@ const SubMenu = ({ data }) => {
             }
             className={`flex h-0 flex-col pl-12 text-[0.8rem] z-10 font-normal overflow-hidden w-[15rem] relative -top-2 rounded-br-md ${(tabClicked === data.name ||pathname.includes(data.name)) && "bg-sidebarSubMenuBg"}` }
           >
-            {/* <div className={`bg-gray-800 hidden left-3 h-full absolute w-[0.9px] mx-3.5 border-1 ${(tabClicked === data.name ||pathname.includes(data.name)) && "d-block"}`}></div> */}
+            <div className={`bg-gray-700 left-3 h-full absolute w-[0.9px] mx-3.5 border-1 ${(tabClicked === data.name ||pathname.includes(data.name)) ? 'block': 'hidden'}`}></div>
 
             {data.menus?.map((menu) => (
-              <li key={menu}
+              <li key={menu.name}
             
               >
                 <NavLink
 
-                  to={`/${data.name}/${menu}`}
+                  to={`/${data.name}${menu.route}`}
                   className="link !bg-transparent capitalize relative hover:text-white hover:cursor-pointer"
                 >
-                  {menu}
+                  {
+                    pathname.includes(menu.route) && (
+
+                      <span className="w-2 h-2 rounded-full bg-btnColor absolute -left-[1.6rem] duration-200 transition-all"></span>
+                    )
+                  }
+                  {menu.name}
                 </NavLink>
               </li>
             ))}

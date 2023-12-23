@@ -174,10 +174,10 @@ const Sidebar = () => {
 
                               <>
                             <li className={`${sidebarMinimized && 'border-b border-gray-800 py-5 hover:text-white ' }`}>
-                            <NavLink to={"/"} className={` ${sidebarMinimized ? 'flex flex-col text-center justify-center gap-1 cursor-pointer  duration-300 font-medium text-gray-400': 'link'}`}>
+                            <NavLink to={route.route} className={` ${sidebarMinimized ? 'flex flex-col text-center justify-center gap-1 cursor-pointer  duration-300 font-medium text-gray-400': 'link'}`}>
                               <MdOutlineAnalytics size={sidebarMinimized ? 30 :23} className={`min-w-max ${sidebarMinimized && "mx-auto"}`} />
                               
-                              Dashboard
+                             {route.name}
                               
                             </NavLink>
                           </li>

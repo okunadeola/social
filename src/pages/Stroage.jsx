@@ -1,5 +1,5 @@
 const Stroage = () => {
-  return <h1>Stroage</h1>;
+  return <h1>Storage</h1>;
 };
 
 export default Stroage;

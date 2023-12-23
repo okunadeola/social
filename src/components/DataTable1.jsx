@@ -62,7 +62,7 @@ function PaginateComponent() {
   const onPageChange = (page) => setCurrentPage(page);
 
   return (
-    <div className="flex sm:flex-row flex-wrap justify-between my-10 mb-20 mx-10 items-center">
+    <div className="flex sm:flex-row flex-wrap justify-between my-10 mb-20 mx-15 items-center">
       <div>
         <span>Showing 1 to 7 of 7 entries</span>
 
