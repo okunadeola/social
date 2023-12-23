@@ -67,7 +67,7 @@ useEffect(() => {
 
                     
                         <IoIosArrowDown
-                        className={`${((subMenuOpen && tabClicked) !== extendedSubMenuData?.name ) ? "-rotate-90" :"rotate-30"} duration-200 `}
+                        className={`${(subMenuOpen ||  (tabClicked === extendedSubMenuData?.name ) ) ? "rotate-30" :"-rotate-90"} duration-200 `}
                         />
                     
                     
@@ -78,7 +78,7 @@ useEffect(() => {
                         <motion.ul
                         
                         animate={
-                            tabClicked === extendedSubMenuData?.name
+                            (tabClicked === extendedSubMenuData?.name) ||pathname.includes(extendedSubMenuData?.name)
                             ? {
                                 height: "fit-content",
                                 }
