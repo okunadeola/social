@@ -19,7 +19,7 @@ const  SubMenuExtended = () => {
 
   const [subMenuOpen, setSubMenuOpen] = useState(false);
 
-  const previousExtendedMenuData = usePrevious(extendedSubMenuData.name)
+  const previousExtendedMenuData = usePrevious(extendedSubMenuData?.name)
 
 
 
@@ -32,13 +32,12 @@ const  SubMenuExtended = () => {
 
 
 useEffect(() => {
-    console.log(previousExtendedMenuData)
 
-    if(extendedSubMenuData.name !==previousExtendedMenuData ){
+    if(extendedSubMenuData?.name !==previousExtendedMenuData ){
         setSubMenuOpen(true)
     }
 
-  }, [extendedSubMenuData.name]);
+  }, [extendedSubMenuData]);
 
   
  const close = ()=>{
