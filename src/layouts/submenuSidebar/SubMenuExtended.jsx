@@ -88,7 +88,7 @@ useEffect(() => {
                         }
                         className={`flex h-0 flex-col pl-12 text-[0.8rem] font-normal overflow-hidden w-[15rem] relative -top-2 rounded-br-md ${(tabClicked === extendedSubMenuData?.name ||pathname.includes(extendedSubMenuData?.name)) && "bg-sidebarSubMenuBg"}` }
                         >
-                        <div className={`bg-gray-800 hidden left-3 h-full absolute w-[0.9px] mx-3.5 border-1 ${(tabClicked === extendedSubMenuData?.name ||pathname.includes(extendedSubMenuData?.name)) && "d-block"}`}></div>
+                        {/* <div className={`bg-gray-800 hidden left-3 h-full absolute w-[0.9px] mx-3.5 border-1 ${(tabClicked === extendedSubMenuData?.name ||pathname.includes(extendedSubMenuData?.name)) && "block"}`}></div> */}
 
                         {extendedSubMenuData.menus?.map((menu) => (
                             <li key={menu}

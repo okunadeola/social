@@ -61,7 +61,7 @@ const SubMenu = ({ data }) => {
     <>
       <li
      
-        className={`relative z-40  hover:text-white hover:cursor-pointer ${!sidebarMinimized && tabClicked === data.name && "bg-sidebarSubMenuBg"} ${sidebarMinimized && 'border-b border-gray-800 py-4' } ${sidebarMinimized ? 'flex flex-col text-center justify-center gap-1 cursor-pointer  duration-300 font-medium text-gray-400': 'link'}`}
+        className={`relative z-40  hover:text-white hover:cursor-pointer ${!sidebarMinimized && tabClicked === data.name && "bg-sidebarSubMenuBg"} ${sidebarMinimized ? 'border-b border-gray-800 py-4' : 'border-0 border-transparent' } ${sidebarMinimized ? 'flex flex-col text-center justify-center gap-1 cursor-pointer  duration-300 font-medium text-gray-400': 'link'}`}
         onClick={showSubMenu} ref={trigger}
       >
         <data.icon size={sidebarMinimized ? 30 :23}  className={`min-w-max ${sidebarMinimized && "mx-auto"}`} />
