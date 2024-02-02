@@ -2,31 +2,20 @@
 
 
 import  { useEffect, useState } from 'react'
-import {  BsMoonFill, BsSun } from 'react-icons/bs'
-import { HiDesktopComputer } from 'react-icons/hi'
+
+import { RiSunLine } from "react-icons/ri";
+import { LuMoon } from "react-icons/lu";
 
 
-const options = [
-    {
-        Icon: BsSun,
-        text: 'light'
-    },
-    {
-        Icon: BsMoonFill,
-        text: 'dark'
-    },
-    {
-        Icon: HiDesktopComputer,
-        text: 'system'
-    },
-]
+
 
 
 
 const ThemeModeSwitcher2 = () => {
 const [theme, setTheme] = useState(
-    localStorage.getItem('theme2') ? localStorage.getItem('theme2') : 'system'
+    localStorage.getItem('theme2') ? localStorage.getItem('theme2') : 'light'
 )
+
 const element = document.documentElement // <html/> tag
 const darkQuery = window.matchMedia("(prefers-color-scheme: dark)") // will return match object of boolean confirming the current theme mode of the system/device/window
 // console.log(darkQuery, 'darkQuery')
@@ -97,14 +86,20 @@ useEffect(() => {
 
 
   return (
-    <div className='duration-100 dark:bg-slate-200 dark:text-gray-800 bg-slate-200 rounded-lg flex items-center justify-between'>
+    <div className='duration-100 flex items-center  justify-between'>
+      
        {
-        options?.map(({text, Icon})=>(
-            <button key={text} onClick={()=> setTheme(text)} className={`w-6 h-6 leading-9 rounded-full m-1 ${theme === text && 'text-sky-600' }`}>
-                <Icon className='mx-auto'/>
+            theme === 'light' ? (
+                <button  onClick={()=> setTheme('dark')} className={`w-6 h-6 leading-9 m-1`}>
+                <LuMoon  strokeWidth={1} size={18} className='mx-auto font-extrabold'/>
             </button>
-        )) 
+            ) : (
+                <button  onClick={()=> setTheme('light')} className={`w-6 h-6 leading-9 m-1 `}>
+                <RiSunLine  strokeWidth={1} size={18} className='mx-auto font-extrabold'/>
+            </button>
+            )
        }
+
     </div>
   )
 }

@@ -2,7 +2,7 @@
 
 
 import { useEffect, useRef, useState } from 'react';
-import {  BsBellFill,  } from 'react-icons/bs';
+import { LuBell } from "react-icons/lu";
 import { Link } from 'react-router-dom';
 
 const DropdownNotification = () => {
@@ -37,7 +37,11 @@ const DropdownNotification = () => {
   });
 
   return (
-    <div className="relative dark:text-gray-700">
+    <div className="relative dark:text-gray-700 cursor-pointer" >
+      <div className=' absolute h-4 w-4 rounded-full bg-red-500 flex items-center justify-center right-0 -top-[0.15rem]'>
+        <span className='flex items-center justify-center text-xs font-bold text-white'>2</span>
+      </div>
+
       <Link
         ref={trigger}
         onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -45,8 +49,8 @@ const DropdownNotification = () => {
         className=""
       >
         <div className='p-1 flex items-center rounded-lg cursor-pointer'>
-        <BsBellFill color='grey'
-                     size={25} className='font-medium text-gray-200' />
+        <LuBell 
+                   strokeWidth={3}   size={18} className='fon-bold text-gray-200' />
         </div>
       </Link>
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import UserOne from '../../assets/images/avatar2.jpg';
 
-import { FaRegEnvelope } from "react-icons/fa6";
+import { TbMessageCircle } from "react-icons/tb";
 
 const DropdownMessage = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -38,7 +38,12 @@ const DropdownMessage = () => {
   });
 
   return (
-    <div className="relative dark:text-gray-700 z-[9999955]" >
+    <div className="relative dark:text-gray-700" >
+
+      <div className=' absolute h-4 w-4 rounded-full bg-green-500 flex items-center justify-center right-0 -top-[0.15rem]'>
+        <span className='flex items-center justify-center text-xs font-bold text-white'>2</span>
+      </div>
+
       <Link
         ref={trigger}
         onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -46,9 +51,9 @@ const DropdownMessage = () => {
         to="#"
       >
        {/* <BsChatDots */}
-       <FaRegEnvelope
-       color='grey'
-                     size={22} className='font-medium text-gray-200'/>
+       <TbMessageCircle
+       
+                  strokeWidth={2.5}  size={18} className='font-medium text-gray-200'/>
       </Link>
 
       {/* <!-- Dropdown Start --> */}

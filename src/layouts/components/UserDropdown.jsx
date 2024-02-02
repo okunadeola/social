@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+// public/assets/images/profiles/avatar-07.jpg
+// import UserOne from "assets/images/avatar-07.jpg";
 
-import UserOne from "../../assets/images/avatar2.jpg";
-import ArrowDown from "../../components/ArrowDown";
 
 const UserDropdown = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -38,27 +38,26 @@ const UserDropdown = () => {
 
   return (
     <div className="relative ">
+     
       <Link
         ref={trigger}
         onClick={() => setDropdownOpen(!dropdownOpen)}
         className="flex items-center gap-1"
         to="#"
       >
-        <span className="h-10 w-10 rounded-full flex items-center">
+        <span className="h-10 w-10 rounded-full flex items-center relative">
           <img
-            src={UserOne}
+            src="/assets/images/profiles/avatar-07.jpg"
             alt="User"
-            className="rounded-full w-[2rem] h-[2rem]"
+            className="rounded-full w-[2.5rem] h-[2.5rem]"
           />
+           <div className='absolute h-3 w-3 rounded-full bg-green-400 flex items-center justify-center right-0 top-0 border-[3px] border-white'>
+          </div>
         </span>
-        <span className="hidden text-left lg:block">
-          <span className="block text-base font-medium ">Laza Bogdan</span>
-          <span className="block text-xs text-gray-400">Administrator</span>
+        <span className="hidden text-left lg:block ml-1">
+          <span className="block text-sm ">Josephin Water</span>
+          <span className="block text-xs text-textLight">Active Now</span>
         </span>
-
-      
-
-        <ArrowDown/>
       </Link>
 
       {/* <!-- Dropdown Start --> */}
@@ -71,8 +70,8 @@ const UserDropdown = () => {
       >
           <div className={dropdownOpen === true ? "block" : "hidden"}>
           <svg
-          className={`fill-current sm:block absolute  right-4 top-[0.6rem] z-50 rotate-180`}
-          fill="#272C33"
+          className={`fill-current sm:block absolute  right-20 top-[0.6rem] z-50 rotate-180`}
+          fill="#272C33 "
           color="white"
           width="16"
           height="13"
@@ -86,12 +85,12 @@ const UserDropdown = () => {
           </div>
           <div
             
-            className={`absolute right-0 mt-[1.2rem] flex w-60 flex-col rounded-sm border border-stroke dark:border-transparent z-[555] bg-white dark:text-gray-100 dark:bg-slate-900 shadow-default dark:border-strokedark dark:bg-boxdark ${
+            className={`absolute right-0 mt-[1.2rem] flex w-60 flex-col rounded-sm border border-stroke dark:border-transparent z-[555] bg-white dark:text-gray-100 dark:bg-cardDarkColor shadow-default dark:border-strokedark dark:bg-boxdark ${
               dropdownOpen === true ? "block" : "hidden"
             }`}
           >
         
-            <ul className="flex flex-col gap-5 border-b border-stroke px-6 py-7 dark:border-gray-500">
+            <ul className="flex flex-col gap-5 border-b border-stroke px-6 py-7 dark:border-gray-700">
               <li className=" group">
                 <Link
                   to="/profile"
